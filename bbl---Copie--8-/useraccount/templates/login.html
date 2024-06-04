@@ -1,0 +1,59 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static '/Assets/css/login.css' %}" />{% endblock %}
+{% block title %} <title>Login</title> {% endblock %} 
+{% block content_index %}
+<div class="container-fluid">  
+<div class="containerform">
+    <img src="{% static '/Assets/images/bible-icon-18591-Windows.ico' %}" alt="" />
+    <div class="container">
+      <form id="signin" action="" method="POST">
+        {% csrf_token %}
+        <div class="row">
+          <h2 style="text-align: center">Authentification utilisateur</h2>
+
+          <div class="col">
+            <div class="hide-md-lg">
+              <p>Or sign in manually:</p>
+            </div>
+
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <input type="submit" value="Login" />
+          
+            <p class="forgotpwd">
+              <strong>Vous n'avez pas de compte? <a href="{% url 'App_signup' %}">Créer votre compte</a></strong>
+          </p>
+          </div>
+          
+        </div>
+        
+      </form>
+      
+
+      <div class="col loginwidthreseau">
+        <a href="#" class="fb btn">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="google btn">
+          <i class="fa-brands fa-google"></i>
+        </a>
+        <a href="" class="google btn"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+    </div>
+  </div></div>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'Assets/css/index.css' %}" /> {% endblock %}
+{% block title %} <title>Pejy fandraisana</title> {% endblock %}
+
+{% block head_content %}
+<!-- 
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'indexLesona' %}">Fampianarana</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Home_baiboly' %}">Baiboly</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Home_fihirana' %}">Fihirana</a>
+      </li>
+    </ul>
+  </div> -->
+  {% endblock %}
+    {% block content_index %}
+    {% endblock %}
+    {% block scripts %} {% endblock %}

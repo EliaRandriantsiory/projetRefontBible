@@ -1,0 +1,54 @@
+{% extends 'fihirana_base.html' %} 
+{% block content_fihirana %}
+<!-- <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <h3>Fihirana voalohany</h3>
+</button> -->
+<button class="btn">
+  <a class="dropdown-item" href="{% url 'fihirana_1_list' %}"><h3>Fihirana voalohany</h3></a>
+</button>
+
+<div hidden class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Link 1</a></li>
+    <li><a class="dropdown-item" href="#">Link 2</a></li>
+    <li><a class="dropdown-item" href="#">Link 3</a></li>
+  </ul>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div  class="modal-content ">
+      <div class="modal-body bg-transparent">
+        <div class="modal-body-content">
+          <button class="btn ">Fihirana Faharoa</button>
+          <button class="btn ">Fihirana Faharoa</button>
+        </div>
+      </div>
+        
+      
+    </div>
+  </div>
+</div>
+
+<div  class="list-fihirana">
+  <div class="rechercheHira">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input
+      type="text"
+      class="form-control"
+      id="input-search"
+      placeholder="Hijery hira"
+    />
+    
+  </div>
+  <div class="list-hira-content">
+    <table id="tableContent">
+        
+    </table>
+  </div>
+</div>
+
+{% endblock %}

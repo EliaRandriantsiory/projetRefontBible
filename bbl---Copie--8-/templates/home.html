@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}" /> -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/bootstrap-5.3.2-dist/css/bootstrap.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/index.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/fontawesome-free-6.5.1-web/css/all.css' %}"
+    />
+    
+    {% block css %} {% endblock %}
+    
+    {% block title %}
+    <title>Ny baiboliko</title>
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'index' %}">Mon bible</a>
+          
+
+          {% if user.is_authenticated %}
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'indexLesona' %}">Fampianarana</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'Home_baiboly' %}" role="button" data-bs-toggle="dropdown">Baiboly</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'fihirana_1_list' %}">Testameta voalohany</a></li>
+                <li><a class="dropdown-item" href="{% url 'fihirana_2_list' %}">Testameta faharoa</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'Home_fihirana' %}" role="button" data-bs-toggle="dropdown">Fihirana</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'fihirana_1_list' %}">Fihirana voalohany</a></li>
+                <li><a class="dropdown-item" href="{% url 'fihirana_2_list' %}">Fihirana faharoa</a></li>
+                <li><a class="dropdown-item" href="{% url 'fihirana_ajout_list' %}">Fihirana fanampiny</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        {% endif %}
+
+          <ul class="navbar-nav">
+            <li class="nav-item hrefauth">
+              {% if user.is_authenticated %}
+              <a  href="{% url 'profil_utilisateur' %}"
+                ><strong>{{ user.username }} </strong>
+              </a>
+              <a href="{% url 'App_signout' %}">Se Déconnecter</a>
+              {% else %}
+              <a class="nav-link" href="{% url 'App_signin' %}"
+                >S'authentifier</a
+              >
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+    {% block content_index %}
+    
+    {% endblock %}
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'assets/javascripts/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+    
+    {% block scripts %} {% endblock %}
+  </body>
+</html>

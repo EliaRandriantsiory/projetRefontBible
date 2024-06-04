@@ -1,0 +1,63 @@
+{% extends 'fihirana_base.html' %} {% block content_fihirana %}
+
+<div class="content-fihirana-header">
+  <button class="btn">
+    <a class="dropdown-item" href="{% url 'fihirana_1_list' %}"
+      ><h3>Fihirana voalohany</h3></a
+    >
+  </button>
+</div>
+
+<div class="content-bodyy">
+  <form class="form-mod-fihirana" method="post" style="align-items: center; padding: 15px">
+    {% csrf_token %}
+    <div class="content-body-header">
+      <div class="title-header">
+        <label for="">Titre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="Title"
+          value="{{titre}}"
+        /><label>Clés: </label>
+        <input
+          type="text"
+          id="clesHira"
+          class="form-control"
+          name="cles"
+          value="{{cles}}"
+        />
+      </div>
+    </div>
+
+    <div class="content-mod-fihirana">
+      <div><label for="content_file">Content : </label></div>
+      <textarea
+        name="content_file"
+        class="text_area"
+        cols="50"
+        rows="15"
+        style="
+          resize: vertical;
+          border: 2px solid #ccc;
+
+          font-family: 'Arial', sans-serif;
+
+          font-size: 18px;
+        "
+      >
+{% for ctn,v in contents.items %}{% for value in v %}{{value}}{% endfor %}{% endfor %}</textarea
+      >
+    </div>
+
+    <div class="content-body-footer">
+      <label for="ord_diff">Ordre dif : </label>
+      <textarea name="ord_dif" id="" class="text_area" cols="50" rows="2">
+{{ord_dif}}</textarea
+      >
+    </div>
+    <input type="submit" value="Soumettre" />
+  </form>
+</div>
+<div class="content-footer"></div>
+{% endblock %}

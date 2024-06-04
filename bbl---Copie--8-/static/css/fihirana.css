@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+.hrefauth a {
+    text-decoration: none;
+    color: #000;   
+}
+.list-fihirana{
+    background-color: rgb(8, 49, 35);
+}
+a{
+    text-decoration: none;
+    color: #000;
+}/*contentFihirana  */
+/* .contentFihirana{
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    height: 80vh;
+} */
+.contentFihirana-header{
+    /* position: fixed; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 240px;
+    min-width: 240px;
+    
+}
+
+/*  */
+#contentFihirana-header-btn{
+    font-size: 25px;
+    margin-left: 5px;
+}
+.contentFihirana-header-option{
+    display: flex;
+    flex-direction: column;
+}
+.contentFihirana-header button{
+    margin-bottom: 5px;
+}
+/*  */
+

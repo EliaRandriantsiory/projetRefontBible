@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+.hrefauth a {
+    text-decoration: none;
+    color: #000;   
+}
+/* rechercheHira */
+.rechercheHira{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+.rechercheHira input{
+    border: none;
+    width: 200px;
+}
+.rechercheHira i{
+    font-size: 20px;
+    margin-right: 5px;
+    
+}
+
+
+/*  */
+.contentFihirana-content{
+    /* padding: 15px; */
+    background-color: aquamarine;
+    height: 87vh;
+    width:100%;
+}
+
+/*  */
+.list-fihirana{
+    width: 100%;
+    padding: 10px;
+}
+
+/*  */
+.list-hira-content{
+    /* border: solid 0.5px; */
+    height: 68vh;
+    width: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    
+    align-items: center;
+    justify-content: center;
+}
+/*  */
+.modal-btn-personaliser{
+    
+    height: 20px;
+}
+#idChoicefihirana{
+    background-color: aquamarine;
+}
+.modal-body-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+.contentFihirana{
+    display: flex;   
+    height: 80vh;
+    padding: 10px;
+}
+.contentFihirana-header{
+    /* position: fixed; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 240px;
+    min-width: 240px;
+}
+
+/*  */
+#contentFihirana-header-btn{
+    font-size: 25px;
+    margin-left: 5px;
+}
+.contentFihirana-header-option{
+    display: flex;
+    flex-direction: column;
+}
+.contentFihirana-header button{
+    margin-bottom: 5px;
+}
+/* Fihirana view */
+.content-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+
+     height: 20vh; 
+}
+
+.form-mod-fihirana{
+
+    /* display: none; */
+}
+
+
+
+.content-body-content{
+    overflow-y: auto;
+    height: 60vh;
+    margin-top: 10px;
+}
+
+/* Fihirana modif */
+/*  */
+.title-header{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.title-header label{
+    width: 10vw;
+}
+#clesHira{
+    width: 50px;
+}
+.content-mod-fihirana{
+    padding-top: 10px;
+}
+.content-mod-fihirana textarea{
+    width: 100%;
+    height: 250px;
+}
+.content-body-footer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.content-body-footer textarea{
+    height: 30px;
+}

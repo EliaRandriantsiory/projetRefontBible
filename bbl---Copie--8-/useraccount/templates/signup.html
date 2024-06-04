@@ -1,0 +1,95 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static '/Assets/css/login.css' %}" />{% endblock %}
+{% block title %} <title>Login</title> {% endblock %} 
+{% block content_index %}
+<div class="container-fluid">
+    <div class="containerform">
+      <img src="{% static '/Assets/images/bible_9867482.png' %}" alt="" />
+      <form
+        id="formsignup"
+        action=""
+        style="border: 1px solid #ccc"
+        method="POST"
+      >
+      {% csrf_token %}
+      <div class="row">
+        <h2 style="text-align: center">Authentification utilisateur</h2>
+
+        <div class="col">
+          <div class="hide-md-lg">
+            <p>Or sign in manually:</p>
+          </div>
+
+      
+            <small
+              >Vous avez un compte?
+              <a href="{% url 'App_signin' %}">connecter vous-ici</a></small
+            >
+          </div>
+          <hr />
+          <div class="authemail">
+            <input
+              type="text"
+              placeholder="Enter Email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="pwd">
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
+          </div>
+          <div class="repeat_pwd">
+            <input
+              type="password"
+              placeholder="Repeat Password"
+              name="psw-repeat"
+              required
+            />
+          </div>
+
+          <p class="forgotpwd">
+            By creating an account you agree to our
+            <a href="#" style="color: dodgerblue">Terms & Privacy</a>.
+          </p>
+
+          <div class="clearfix">
+            <!-- <a href="../index.html" class="btn btn-danger">Cancel</a> -->
+            <input class="btn btn-success" type="submit" value="Sign Up">
+            
+          </div>
+        </div>
+      </form>
+    </div></div>
+<!-- <h1>INSCRIPTION</h1>
+<form method="POST">
+    
+    <div>
+        <p>
+            <label for="username">Nom d'utilisateur</label>
+            {{form.username}}
+        </p>
+    </div>
+    <div>
+        <p>
+            <label for="password1" >Mot de pass</label>
+            {{form.password1}}
+        </p>
+    </div>
+    <div>
+        <p>
+            <label for="password2">Confirmation Mot de pass</label>
+            {{form.password2}}
+        </p>
+    </div>
+    <div>
+        <button type="submit">S'inscrire</button>
+    </div>
+</form> -->
+
+{% endblock %}

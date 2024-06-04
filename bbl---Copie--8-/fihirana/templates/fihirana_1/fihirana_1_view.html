@@ -1,0 +1,28 @@
+{% extends 'fihirana_base.html' %}
+{% block content_fihirana %}
+
+<div class="content-fihirana-header">
+    <button class="btn">
+        <a class="dropdown-item" href="{% url 'fihirana_1_list' %}"><h3>Fihirana voalohany</h3></a>
+      </button>
+</div>
+<div class="content-bodyy">
+    <div class="content-body-header">
+        <div class="titleDescription">
+            <label><strong>{{titre}}</strong></label>
+        <label for="">Clés : {{cles}}<a href="{% url 'fihirana_1_mod' laharana titre %}"> (Cliquer ici pour modifier)</a> </label>
+        </div>
+    </div>
+    <div class="content-body-content">
+        
+    {% for ctn in contents %}
+    <div>
+        {% for content in ctn %}
+            <div>{{content}}</div>
+        {% endfor %}
+    </div><br>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
