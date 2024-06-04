@@ -7,10 +7,11 @@ import { forEach } from 'lodash';
 const AndininyComponent = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const mizahaboky = useSelector((state) => state.boky.mizahaBoky);
+	const currentBokyContent = useSelector((state) => state.boky.bokyContent);
 	const dispatch = useDispatch();
 	const [verset, setVerset] = useState()
 	const [allBokyContent, setAllBokyContent] = useState([])
-	// const versets = Array.from({ length: parseInt(verset) }, (_, index) => index + 1);
+	const versets = Array.from({ length: Array.from(currentBokyContent).length }, (_, index) => index + 1);
 
 	const toko = searchParams.get('toko');
 	const items = ['1', '2']
@@ -27,11 +28,11 @@ const AndininyComponent = () => {
 		// console.log(typeof(items))
 		// console.log(items_anct.length)
 		let tabBoky=mizahaboky.split(" ")
-		// console.log(tabBoky)
-		let boky_ = `${tabBoky[0]} ${tabBoky[1]}`
-		console.log(boky_)
 		console.log(tabBoky)
-
+		let boky_ = `${tabBoky[0]} ${tabBoky[1]}`
+		console.log(mizahaboky)
+		console.log(tabBoky)
+		console.log(Array.from(currentBokyContent).length)
 
 		// $.ajax({
 		// 	url: "http://127.0.0.1:8000/api/viewAll/",
@@ -68,23 +69,23 @@ const AndininyComponent = () => {
 
 	},[])
 
-	useEffect(() => {
-		// return (
-		// 	<div className="bg-white ">
+	// useEffect(() => {
+	// 	return (
+	// 		<div className="bg-white ">
 	
-		// 		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[75vh] overflow-y-scroll">
-				
-		// 		{/* {verset.map((item, index) => (
-		// 		<button key={index} onClick={() => handleAndininy(item)}>
-		// 			<Link  to={`/session/baiboly/andininy?andininy=${item}`} className="bg-blue-100 rounded-lg p-4 flex items-center justify-center">
-		// 			<span>{item}</span>
-		// 			</Link>
-		// 		</button>
-		// 	))} */}
-		// 		</div>
-		// 	</div>
-		// );
-	},[verset])
+	// 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[75vh] overflow-y-scroll">
+	// 			bonjour
+	// 			{/* {verset.map((item, index) => (
+	// 			<button key={index} onClick={() => handleAndininy(item)}>
+	// 				<Link  to={`/session/baiboly/andininy?andininy=${item}`} className="bg-blue-100 rounded-lg p-4 flex items-center justify-center">
+	// 				<span>{item}</span>
+	// 				</Link>
+	// 			</button>
+	// 		))} */}
+	// 			</div>
+	// 		</div>
+	// 	);
+	// },[verset])
 
 	// useEffect(() => {
 	// 	setVerset( Array.from({ length: allBokyContent.length }, (_, index) => index + 1))
@@ -101,13 +102,13 @@ const AndininyComponent = () => {
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[75vh] overflow-y-scroll">
 			
-			{/* {verset.map((item, index) => (
+			{versets.map((item, index) => (
 			<button key={index} onClick={() => handleAndininy(item)}>
 				<Link  to={`/session/baiboly/andininy?andininy=${item}`} className="bg-blue-100 rounded-lg p-4 flex items-center justify-center">
 				<span>{item}</span>
 				</Link>
 			</button>
-		))} */}
+		))}
 			</div>
 		</div>
 	);

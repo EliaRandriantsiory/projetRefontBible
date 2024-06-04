@@ -1,30 +1,35 @@
 const initialState = {
-    mizahaBoky: "Genesisy 1 : 12-15",
+    // mizahaBoky: "Genesisy 1 : 12-15",
+    mizahaBoky: "",
     isaToko:"",
     currentBoky:"",
     currentToko:"",
-    currentAndininy:""
+    currentAndininy:"",
+    bokyContent:[]
   };
   
   const bokyReducer = (state = initialState, action) => {
     switch (action.type) {
+      case 'BOKYCONTENT': 
+        return { ...state, bokyContent:action.payload}
       case 'ISATOKO': 
-        return {isaToko:`${action.payload}`}
+        return { ...state, isaToko:`${action.payload}`}
       case 'BOKY':
-        // return { ...state, mizahaBoky: `${action.payload}`,currentBoky:action.payload};
-        return{...state}
+        return { ...state, mizahaBoky: `${action.payload}`,currentBoky:action.payload};
+        // return{...state}
       case 'TOKO':
         
-          // return { ...state, mizahaBoky: `${state.mizahaBoky} ${action.payload}`,currentToko:action.payload };
-          return{...state}
+          return { ...state,currentToko:action.payload, mizahaBoky: `${state.mizahaBoky} ${action.payload}` };
+          // return{...state}
         
         
       case 'ANDININY':
+        return { ...state, currentAndininy:action.payload, mizahaBoky: `${state.mizahaBoky} : ${action.payload}-` };
         // if(state.===""){
         //   return (state)
         // }else{
           // return { ...state, mizahaBoky: `${state.mizahaBoky} : ${action.payload}-`, currentAndininy:action.payload };
-          return{...state}
+          // return{...state}
         // }
         
       default:

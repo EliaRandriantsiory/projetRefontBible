@@ -11,7 +11,7 @@ const ConfComponent = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		setCurrentResult( boky.split(" "));
-        console.log(boky)
+        // console.log(boky)
 		// console.log(currentResult)
 
 		// <h2 className="text-lg font-bold mb-4" >Ny boky : <Link to="/session/baiboly" className="text-black hover:text-gray-300">
@@ -31,8 +31,8 @@ const ConfComponent = () => {
 
 			},[boky])
 				useEffect(() => {
-					console.log(currentResult.length)
-                    console.log(currentResult)
+					// console.log(currentResult.length)
+                    // console.log(currentResult)
 				},[currentResult])
 
 

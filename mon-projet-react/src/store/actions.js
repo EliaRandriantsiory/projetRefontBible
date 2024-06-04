@@ -3,6 +3,11 @@ export const isaToko = (value) => ({
   payload: value,
 });
 
+export const bokyContent = (value) => ({
+  type: 'BOKYCONTENT',
+  payload: value,
+});
+
 export const boky = (value) => ({
     type: 'BOKY',
     payload: value,

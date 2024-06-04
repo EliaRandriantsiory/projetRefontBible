@@ -16,7 +16,9 @@ const BokyComponent = () => {
 	// const mizahaboky = useSelector((state) => state.boky.mizahaBoky);
 	const dispatch = useDispatch();
 	const handleBoky = (value) => {
-		// console.log(value)
+
+		console.log(value.bible)
+		console.log(value.nbr_chapitre)
 		dispatch(boky(value.bible));
 		dispatch(isaToko(value.nbr_chapitre));
 		// console.log("bonjour toko"+value)
@@ -110,7 +112,8 @@ const BokyComponent = () => {
 							
 							<button key={index} onClick={() => handleBoky(item)}>
 							{/* {item.type_bible}: {item.nom} */}
-						<Link to={`/session/baiboly/toko?boky=${item.bible}&chapitre=${item.nbr_chapitre}`} className="bg-blue-100 rounded-lg p-4 flex items-center justify-center">
+						{/* <Link to={`/session/baiboly/toko?boky=${item.bible}&chapitre=${item.nbr_chapitre}`} className="bg-blue-100 rounded-lg p-4 flex items-center justify-center"> */}
+						<Link to={`/session/baiboly/toko`} className="bg-blue-100 rounded-lg p-4 flex items-center justify-center">
 							<div className="w-8 h-8 rounded-full bg-blue-500 mr-4 flex justify-center items-center text-white">
 								{item.nbr_chapitre}
 							</div>
