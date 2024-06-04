@@ -1,3 +1,8 @@
+export const isaAndininy = (value) => ({
+  type: 'ISAANDININY',
+  payload: value,
+});
+
 export const isaToko = (value) => ({
   type: 'ISATOKO',
   payload: value,
@@ -18,6 +23,11 @@ export const boky = (value) => ({
     payload: value,
   });
   
+export const andininy2 = (value) => ({
+    type: 'ANDININY2',
+    payload: value,
+  });
+
   export const andininy = (value) => ({
     type: 'ANDININY',
     payload: value,

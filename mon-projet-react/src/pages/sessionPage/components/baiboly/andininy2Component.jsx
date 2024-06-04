@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { andininy } from '../../../../store/actions';
+import { andininy, andininy2 } from '../../../../store/actions';
 import { forEach } from 'lodash';
 
-const AndininyComponent = () => {
+const Andininy2Component = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const mizahaboky = useSelector((state) => state.boky.mizahaBoky);
 	const currentBokyContent = useSelector((state) => state.boky.bokyContent);
@@ -21,9 +21,9 @@ const AndininyComponent = () => {
 	const handleAndininy = (value) => {
 		console.log(value)
 		
-		dispatch(andininy(value));
+		dispatch(andininy2(value));
 
-		navigate('/session/baiboly/andininy2')
+		navigate('/session/baiboly/andininy')
 		// console.log("bonjour toko"+value)
 	}
 
@@ -120,4 +120,4 @@ const AndininyComponent = () => {
 	);
 };
 
-export default AndininyComponent;
+export default Andininy2Component;

@@ -28,6 +28,7 @@ import TokoComponent from "./pages/sessionPage/components/baiboly/tokoComponents
 import BokyComponents from "./pages/sessionPage/components/printListComponent";
 import MizahaBokyComponent from "./pages/sessionPage/components/baiboly/printResultBoky";
 import Boky2Component from "./pages/sessionPage/components/baiboly/boky2component";
+import Andininy2Component from "./pages/sessionPage/components/baiboly/andininy2Component";
 
 const App = () => {
 	return (
@@ -54,6 +55,7 @@ const App = () => {
 							<Route path="boky2" element={<Boky2Component />} />
 							<Route path="toko" element={<TokoComponent />} />
 							<Route path="andininy" element={<AndininyComponent />} />
+							<Route path="andininy2" element={<Andininy2Component />} />
 							<Route path="result" element={<MizahaBokyComponent />} />
 						</Route>
 						<Route path="fihirana" element={<Fihirana_session />} />

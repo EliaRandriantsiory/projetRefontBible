@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useSearchParams } from 'react-router-dom';
-import { bokyContent, toko } from '../../../../store/actions';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { bokyContent, isaAndininy, toko } from '../../../../store/actions';
 
 const TokoComponent = () => {
 	const items = ['1', '2']
@@ -10,6 +10,7 @@ const TokoComponent = () => {
 	const currentToko = useSelector((state) => state.boky.currentToko);
 	const dispatch = useDispatch();
 	const [currentChapter, setCurrentChapter] = useState("")
+	const navigate = useNavigate();
 	const chapitres = Array.from({ length: parseInt(isaToko) }, (_, index) => index + 1);
 		// console.log(boky)
 	// console.log(mizahaboky)
@@ -19,11 +20,11 @@ const TokoComponent = () => {
 	},[])
 	const handleToko = (value) => {
 		// console.log("bonjour")
-		console.log(parseInt(value))
+		// console.log(parseInt(value))
 		setCurrentChapter(value)
 
 		let boky_ = `${mizahaboky} ${value}`
-		console.log(currentToko)
+		// console.log(currentToko)
 
 		$.ajax({
 			url: "http://127.0.0.1:8000/api/viewAll/",
@@ -38,8 +39,9 @@ const TokoComponent = () => {
 				// console.log(typeof(response))
 				// console.log("Bonjour")
 				dispatch(bokyContent(Array.from(response)));
+				dispatch(isaAndininy(Array.from(response).length));
 				dispatch(toko(value));
-				
+				navigate('/session/baiboly/andininy')
 				// setAllBokyContent(Array.from(response))
 				// let verset =Array.from(response).length 
 				// console.log(Array.from(response).length)
@@ -92,10 +94,10 @@ const TokoComponent = () => {
 		<div className="bg-white ">
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[75vh] overflow-y-scroll">
 				{chapitres.map((item, index) => (
-					<button key={index} onClick={() => handleToko(item)}>
-					<Link to={`/session/baiboly/andininy`} className="bg-blue-100 rounded-lg p-4 flex items-center justify-center">
+					<button key={index} onClick={() => handleToko(item)} className="bg-blue-100 rounded-lg p-4 flex items-center justify-center">
+					
 					<span>{item}</span>
-					</Link>
+					
 					</button>
 				))}
 			</div>

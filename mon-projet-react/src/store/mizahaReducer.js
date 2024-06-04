@@ -2,6 +2,7 @@ const initialState = {
     // mizahaBoky: "Genesisy 1 : 12-15",
     mizahaBoky: "",
     isaToko:"",
+    isaAndininy:0,
     currentBoky:"",
     currentToko:"",
     currentAndininy:"",
@@ -12,19 +13,20 @@ const initialState = {
     switch (action.type) {
       case 'BOKYCONTENT': 
         return { ...state, bokyContent:action.payload}
+      case 'ISAANDININY': 
+        return { ...state, isaAndininy:action.payload}
       case 'ISATOKO': 
         return { ...state, isaToko:`${action.payload}`}
       case 'BOKY':
         return { ...state, mizahaBoky: `${action.payload}`,currentBoky:action.payload};
         // return{...state}
       case 'TOKO':
-        
-          return { ...state,currentToko:action.payload, mizahaBoky: `${state.mizahaBoky} ${action.payload}` };
+          return { ...state,currentToko:action.payload, mizahaBoky: `${state.mizahaBoky} ${action.payload} :` };
           // return{...state}
-        
-        
-      case 'ANDININY':
-        return { ...state, currentAndininy:action.payload, mizahaBoky: `${state.mizahaBoky} : ${action.payload}-` };
+      case 'ANDININY':        
+        return { ...state, currentAndininy:action.payload, mizahaBoky: `${state.mizahaBoky} ${action.payload}` };
+      case 'ANDININY2':        
+        return { ...state, currentAndininy:action.payload, mizahaBoky: `${state.mizahaBoky}-${action.payload}` };
         // if(state.===""){
         //   return (state)
         // }else{
